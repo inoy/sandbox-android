@@ -1,6 +1,7 @@
 package com.example.hello
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hello.databinding.ActivityMainBinding
@@ -16,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         binding.btnCurrent.setOnClickListener {
             val toast = Toast.makeText(this, Date().toString(), Toast.LENGTH_LONG)
             toast.show()
+
+            Log.d("CurrentTime", Date().toString())
+
             binding.txtResult.text = Date().toString()
         }
     }
