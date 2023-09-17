@@ -1,7 +1,6 @@
 package com.example.hello
 
 import android.os.Bundle
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hello.databinding.ActivityMainBinding
 import java.util.Date
@@ -14,8 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnCurrent.setOnClickListener {
-            val txtResult = findViewById<TextView>(R.id.txtResult)
-            txtResult.text = Date().toString()
+            binding.txtResult.text = Date().toString()
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("txtResult", binding.txtResult.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        binding.txtResult.text = savedInstanceState.getString("txtResult")
     }
 }
