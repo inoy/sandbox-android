@@ -1,6 +1,7 @@
 package com.example.hello
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hello.databinding.ActivityMainBinding
 import java.util.Date
@@ -13,6 +14,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnCurrent.setOnClickListener {
+            val toast = Toast.makeText(this, Date().toString(), Toast.LENGTH_LONG)
+            toast.show()
             binding.txtResult.text = Date().toString()
         }
     }
