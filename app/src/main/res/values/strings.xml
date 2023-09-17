@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Hello</string>
     <string name="hello_world">Hello, 世界！</string>
+    <string name="btnCurrent" translatable="false">現在時刻</string>
 </resources>
